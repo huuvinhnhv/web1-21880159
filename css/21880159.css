@@ -146,3 +146,13 @@ footer {
 .modal-body {
     border: 0;
 }
+
+/*testimonials*/
+#testimonials {
+    background-color: var(--web1-pink);
+}
+
+#testimonials .col {
+    background: url(../images/quot.png) top left no-repeat;
+    padding-left: 3rem;
+}
