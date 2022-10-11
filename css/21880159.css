@@ -178,10 +178,7 @@ footer {
 }
 
 /*Contacts*/
-#map {
-    height: 480px !important;
-    width: 100% !important;
-}
+
 
 .btn-primary {
     background-color: var(--web1-blue) !important;
