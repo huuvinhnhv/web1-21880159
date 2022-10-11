@@ -103,7 +103,7 @@
                 itaque est placeat autem, dolorem eum temporibus molestiae! Voluptates quia explicabo, cupiditate
                 officia eveniet quas possimus?</p>
             <p class="text-black-50"><i>Send an email. All fields with an * are required.</i></p>
-            <form action="">
+            <form action="" method="post" onsubmit="onSubmit(event)">
                 <div class="row py-3">
                     <div class="col">
                         <div class="mb-3">
@@ -129,16 +129,21 @@
                     <textarea rows="3" type="text" class="form-control" name="message" id="message" placeholder=""
                         required></textarea>
                 </div>
-                <div class="text-end">
-                    <div class="form-check">
-                        <label class="form-check-label text-black-50" for="copy">
-                            Copy of yourself
-                        </label>
-                        <input type="checkbox" value="1" id="copy"> &nbsp;&nbsp;
-                        <button type="submit" class="btn btn-primary">Send email to Us</button>
+                <div class="row">
+                    <div id="error-message" class="text-info"></div>
+                    <div class="col">
+                        <div class="text-end">
+                            <div class="form-check">
+                                <label class="form-check-label text-black-50" for="copy">
+                                    Copy of yourself
+                                </label>
+                                <input type="checkbox" value="1" id="copy"> &nbsp;&nbsp;
+                                <button type="submit" class="btn btn-primary">Send email to
+                                    Us</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="error-message" class="text-danger text-center"></div>
             </form>
         </div>
     </section>
@@ -177,7 +182,7 @@
                 <div class="modal-body">
                     <button type="button" class="btn-close float-end" data-bs-dismiss="modal"
                         aria-label="Close"></button>
-                    <form action="#" method="post" id="form-login" class="py-5" onsubmit="onSubmit(event)">
+                    <form action="#" method="post" id="form-login" class="py-5">
                         <h3 class="text-center">Login Form</h3>
                         <div class="mb-3">
                             <input type="text" name="username" id="username" placeholder="Username"
@@ -245,13 +250,19 @@
                     if (response.status == 200) {
                         sendMail();
                     } else {
-                        document.getElementById('error-message').innerHTML = 'Errorr: Can not varify RECAPTCHA';
+                        let responseMessage = document.getElementById('error-message');
+                        responseMessage.innerHTML = 'Errorr: Can not varify RECAPTCHA';
+                        responseMessage.classList.remove();
+                        responseMessage.classList.toggle('text-danger');
                     }
                 });
             });
         }
         function sendMail() {
-            document.getElementById('error-message').innerHTML = 'OK';
+            let responseMessage = document.getElementById('error-message');
+            responseMessage.innerHTML = 'OK';
+            responseMessage.classList.remove();
+            responseMessage.classList.toggle('text-danger');
         }
     </script>
 </body>
