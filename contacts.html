@@ -177,7 +177,7 @@
                 <div class="modal-body">
                     <button type="button" class="btn-close float-end" data-bs-dismiss="modal"
                         aria-label="Close"></button>
-                    <form action="#" method="post" id="form-login" class="py-5" onsubmit="onSubmit(event);">
+                    <form action="#" method="post" id="form-login" class="py-5" onsubmit="onSubmit(event)">
                         <h3 class="text-center">Login Form</h3>
                         <div class="mb-3">
                             <input type="text" name="username" id="username" placeholder="Username"
@@ -230,10 +230,10 @@
     <script
         src="https://www.google.com/recaptcha/enterprise.js?render=6Ldjz3EiAAAAADXUvkH9B3QWGp8Fc3Hk3_W5B64C"></script>
     <script>
-        function onSubmit(event) {
-            event.preventDefault();
+        function onSubmit(e) {
+            e.preventDefault();
             grecaptcha.enterprise.ready(function () {
-                grecaptcha.enterprise.execute('6Ldjz3EiAAAAADXUvkH9B3QWGp8Fc3Hk3_W5B64C', { action: 'login' }).then(async function (token) {
+                grecaptcha.enterprise.execute('6Ldjz3EiAAAAADXUvkH9B3QWGp8Fc3Hk3_W5B64C', { action: 'submit' }).then(async function (token) {
                     let response = await fetch('verify.php', {
                         method: 'POST',
                         headers: {
