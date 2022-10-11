@@ -242,7 +242,7 @@
                         },
                         body: JSON.stringify({ 'g-token': token })
                     });
-                    if (response.status === 200) {
+                    if (response.status == 200) {
                         sendMail();
                     } else {
                         document.getElementById('error-message').innerHTML = 'Errorr: Can not varify RECAPTCHA';
@@ -251,7 +251,7 @@
             });
         }
         function sendMail() {
-            document.getElementById('error-message').innerHTML = 'OK'
+            document.getElementById('error-message').innerHTML = 'OK';
         }
     </script>
 </body>
