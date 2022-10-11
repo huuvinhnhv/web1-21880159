@@ -234,15 +234,15 @@
             event.preventDefault();
             grecaptcha.enterprise.ready(function () {
                 grecaptcha.enterprise.execute('6Ldjz3EiAAAAADXUvkH9B3QWGp8Fc3Hk3_W5B64C', { action: 'login' }).then(async function (token) {
-                    let respone = await fetch('verify.php', {
+                    let response = await fetch('verify.php', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                             'Accept': 'application/json'
                         },
-                        body: JSON.stringify({ 'g-tocken': token })
+                        body: JSON.stringify({ 'g-token': token })
                     });
-                    if (respone.status === 200) {
+                    if (response.status === 200) {
                         sendMail();
                     } else {
                         document.getElementById('error-message').innerHTML = 'Errorr: Can not varify RECAPTCHA';
