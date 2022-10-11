@@ -107,7 +107,7 @@ h1 {
 }
 
 /*about us*/
-#about-us {
+#about-us-home {
     background-color: var(--web1-pink);
 }
 
@@ -155,4 +155,17 @@ footer {
 #testimonials .col {
     background: url(../images/quot.png) top left no-repeat;
     padding-left: 3rem;
+}
+
+/*About US Handlebars*/
+#about-us p {
+    color: gray;
+}
+
+#our-vision p {
+    color: gray;
+}
+
+#content p {
+    color: gray;
 }

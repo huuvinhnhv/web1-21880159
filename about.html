@@ -67,103 +67,35 @@
         </nav>
     </header>
     <section id="banner-small"></section>
-    <section class="container py-5">
-        <div class="row">
-            <div class="col-md-8 col-sm-12">
-                <h1 class="py-3">About Us</h1>
-                <div>
-                    <img src="images/about-1.jpg" alt="about us" class="float-start rounded-4 me-3">
-                    <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h3>
-                    <p class="text-black-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum odio ad eius
-                        itaque, nisi natus
-                        harum placeat labore dolore sunt. Vel blanditiis ratione commodi facere libero, unde modi
-                        pariatur numquam.</p>
-                    <a href="#" class="btn btn-link">Read more</a>
+    <div id="content">
+        <section class="container py-5">
+            <div class="row">
+                <div class="col-md-8 col-sm-12" id="about-us">
+                    <!--Handlebars-->
+                </div>
+                <div class="col-md-4 col-sm-12" id="our-vision">
+                    <!--Handlebars-->
                 </div>
             </div>
-            <div class="col-md-4 col-sm-12">
-                <h1 class="py-3">Our Vision</h1>
-                <div>
-                    <img src="images/vision/vision-1.jpg" alt="vision 1" class="rounded-4 float-start me-3">
-                    <h3>Lorem, ipsum.</h3>
-                    <p class="text-black-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, fuga.</p>
-                </div>
-                <div class="py-3">
-                    <img src="images/vision/vision-2.jpg" alt="vision 1" class="rounded-4 float-start me-3">
-                    <h3>Lorem, ipsum dolor.</h3>
-                    <p class="text-black-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, fuga.</p>
+        </section>
+        <!--testimonial-->
+        <section class="container-fluid py-5" id="testimonials">
+            <div class="container">
+                <h1 class="text-white">Testimonials</h1>
+                <div class="row py-3" id="testimonials-hb">
+
+
                 </div>
             </div>
-        </div>
-    </section>
-    <!--testimonial-->
-    <section class="container-fluid py-5" id="testimonials">
-        <div class="container">
-            <h1 class="text-white">Testimonials</h1>
-            <div class="row py-3">
-                <div class="col">
-                    <p class="text-black-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi obcaecati,
-                        fuga
-                        perspiciatis ut nobis
-                        placeat non exercitationem iste eligendi quos voluptas fugit animi laboriosam expedita. Maxime
-                        iste
-                        reprehenderit totam iure.</p>
-                    <span class="text-white">Patrick Poot</span><br>
-                    <a href="#">Info#demolink.org</a>
-                </div>
-                <div class="col">
-                    <p class="text-black-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi obcaecati,
-                        fuga
-                        perspiciatis ut nobis
-                        placeat non exercitationem iste eligendi quos voluptas fugit animi laboriosam expedita. Maxime
-                        iste
-                        reprehenderit totam iure.</p>
-                    <span class="text-white">Patrick Poot</span><br>
-                    <a href="#">Info#demolink.org</a>
-                </div>
-                <div class="col">
-                    <p class="text-black-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi obcaecati,
-                        fuga
-                        perspiciatis ut nobis
-                        placeat non exercitationem iste eligendi quos voluptas fugit animi laboriosam expedita. Maxime
-                        iste
-                        reprehenderit totam iure.</p>
-                    <span class="text-white">Patrick Poot</span><br>
-                    <a href="#">Info@demolink.org</a>
-                </div>
+        </section>
+        <!--our team-->
+        <section id="our-team" class="container">
+            <h1 class="mt-5">Our Team</h1>
+            <div class="row py-3" id="our-team-hb">
+
             </div>
-        </div>
-    </section>
-    <!--our team-->
-    <section id="our-team" class="container">
-        <h1 class="mt-5">Our Team</h1>
-        <div class="row py-3">
-            <div class="col">
-                <img src="images/our-team/team-1.jpg" alt="our team 1" class="rounded-4 mb-3 img-fluid">
-                <h4>Emily Cramner</h4>
-                <p class="text-black-50">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, voluptatum.
-                </p>
-            </div>
-            <div class="col">
-                <img src="images/our-team/team-1.jpg" alt="our team 1" class="rounded-4 mb-3 img-fluid">
-                <h4>Emily Cramner</h4>
-                <p class="text-black-50">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, voluptatum.
-                </p>
-            </div>
-            <div class="col">
-                <img src="images/our-team/team-1.jpg" alt="our team 1" class="rounded-4 mb-3 img-fluid">
-                <h4>Emily Cramner</h4>
-                <p class="text-black-50">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, voluptatum.
-                </p>
-            </div>
-            <div class="col">
-                <img src="images/our-team/team-1.jpg" alt="our team 1" class="rounded-4 mb-3 img-fluid">
-                <h4>Emily Cramner</h4>
-                <p class="text-black-50">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, voluptatum.
-                </p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
     <!--footer-->
     <footer class="text-center container-fluid text-white py-4">
         <ul class="nav justify-content-center " id="menu-footer">
@@ -194,7 +126,6 @@
     <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-
                 <div class="modal-body">
                     <button type="button" class="btn-close float-end" data-bs-dismiss="modal"
                         aria-label="Close"></button>
@@ -239,6 +170,72 @@
         </script>
     <!--Web1 CSS-->
     <link rel="stylesheet" href="css/21880159.css">
+    <!--Handlebars-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+        integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/21880159.js"></script>
+    <script id="about-us-template" type="text/x-handlebars-template">
+        {{#each data}}
+        <h1 class="py-3">{{name}}</h1>
+        <div>
+            <img src="{{thumbpath}}" alt="{{name}}" class="float-start rounded-4 me-3">
+            <p class="text-black-50">{{{summary}}}</p>
+            <a href="#" class="btn btn-link" onclick="loadData('aboutus/{{id}}', 'details-template','content')">Read more</a>
+        </div>
+        {{/each}}
+    </script>
+    <script id="our-vision-template" type="text/x-handlebars-template">
+        <h1 class="py-3">Our Vision</h1>
+        {{#each data}}
+        <div class="clearfix py-2">
+            <img src="{{thumbpath}}" alt="{{name}}" class="rounded-4 float-start me-3">
+            <h3>{{name}}</h3>
+            <p class="text-black-50">
+                {{{summary}}}
+            </p>
+        </div>
+        {{/each}}
+    </script>
+    <script id="details-template" type="text/x-handlebars-template">
+        <div class="container py-5 overflow-auto">
+            {{#each data}}
+            <h1 class="py-3">{{name}}</h1>
+            <img src="{{imagepath}}" alt="{{name}}" class="float-start rounded-4 me-3">
+            <p>{{{description}}}</p>
+            {{/each}}
+        </div>
+    </script>
+    <script id="our-team-template" type="text/x-handlebars-template">
+        {{#each data}}
+        <div class="col">
+            <a href="#">
+                <img src="{{thumbpath}}" alt="{{name}}" class="rounded-4 mb-3 img-fluid"
+            onclick="loadData('team/{{id}}','details-template','content')">
+            </a>
+            
+            <h4>{{name}}</h4>
+            <p class="text-black-50">
+                {{summary}}
+            </p>
+        </div>
+        {{/each}}
+    </script>
+    <script id="testimonials-template" type="text/x-handlebars-template">
+        {{#each data}}
+        <div class="col">
+            <p class="text-black-50">{{summary}}</p>
+                        <span class="text-white">{{name}}</span><br>
+                        <a href="#">{{email}}</a>
+        </div>
+        {{/each}}
+    </script>
+    <script>
+        loadData('aboutus', 'about-us-template', 'about-us');
+        loadData('visions', 'our-vision-template', 'our-vision');
+        loadData('team', 'our-team-template', 'our-team-hb');
+        loadData('testimonials', 'testimonials-template', 'testimonials-hb');
+    </script>
 </body>
 
 </html>

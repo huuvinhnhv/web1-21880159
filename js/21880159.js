@@ -17,3 +17,10 @@ function setActiveImagepath(img, imagepath, isActive = true) {
   }
   img.nextElementSibling.classList.toggle("web1-text-blue");
 }
+function disableLink(link) {
+  let links = document.querySelectorAll("#gallery-categories a");
+  for (let i = 0; i < links.length; i++) {
+    links[i].classList.remove("disabled");
+  }
+  link.classList.toggle("disabled");
+}
