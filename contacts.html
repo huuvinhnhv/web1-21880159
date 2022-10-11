@@ -258,11 +258,40 @@
                 });
             });
         }
-        function sendMail() {
+        async function sendMail() {
             let responseMessage = document.getElementById('error-message');
-            responseMessage.innerHTML = 'OK';
-            responseMessage.classList.remove();
-            responseMessage.classList.toggle('text-danger');
+            try {
+                let token = await getAuthenticateToken('test', '1c3cr3@m');
+                let postData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value,
+                    copy: document.getElementById('copy').value
+                }
+                let response = await fetch(`${AUTHENTICATE_API}/send`, {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': "application/json",
+                        'Authentication': 'Bearer' + token
+                    },
+                    body: JSON.stringify(postData),
+                });
+                let result = response.json();
+                if (response.status == 200) {
+                    responseMessage.innerHTML = result.message;
+                    responseMessage.classList.remove();
+                    responseMessage.classList.toggle('text-danger');
+                } else {
+                    throw new Error(result.message);
+                }
+            } catch (error) {
+                responseMessage.innerHTML = 'OK';
+                responseMessage.classList.remove();
+                responseMessage.classList.toggle('text-danger');
+            }
+
         }
     </script>
 </body>
