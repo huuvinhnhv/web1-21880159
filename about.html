@@ -53,7 +53,10 @@
                             <a class="nav-link" href="contacts.html">Contacts</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalId">Login</a>
+                            <a class="nav-link link-login" href="#" data-bs-toggle="modal"
+                                data-bs-target="#modalId">Login</a>
+                            <a class="nav-link link-logout" href="#" onclick="logout();"
+                                style="display:none;">Logout</a>
                         </li>
                     </ul>
                     <form class="d-flex my-2 my-lg-0 border rounded-pill" id="form-search">
@@ -100,22 +103,23 @@
     <footer class="text-center container-fluid text-white py-4">
         <ul class="nav justify-content-center " id="menu-footer">
             <li class="nav-item">
-                <a class="nav-link " href="#">Home</a>
+                <a class="nav-link " href="index.html">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="#">About</a>
+                <a class="nav-link active" href="about.html">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Gallery</a>
+                <a class="nav-link" href="gallery.html">Gallery</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Blogs</a>
+                <a class="nav-link" href="blogs.html">Blogs</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contacts</a>
+                <a class="nav-link" href="contacts.html">Contacts</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalId">Login</a>
+                <a class="nav-link link-login" href="#" data-bs-toggle="modal" data-bs-target="#modalId">Login</a>
+                <a class="nav-link link-logout" href="#" onclick="logout();" style="display:none;">Logout</a>
             </li>
         </ul>
         <p class="text-white-50 mt-4">Copyright &copy; 2022 by Nguyen Huu Vinh - 21880159</p>
@@ -129,7 +133,7 @@
                 <div class="modal-body">
                     <button type="button" class="btn-close float-end" data-bs-dismiss="modal"
                         aria-label="Close"></button>
-                    <form action="#" method="post" id="form-login" class="py-5">
+                    <form action="#" method="post" id="form-login" class="py-1" onsubmit="login(event);">
                         <h3 class="text-center">Login Form</h3>
                         <div class="mb-3">
                             <input type="text" name="username" id="username" placeholder="Username"
@@ -141,6 +145,10 @@
                         </div>
                         <button class="form-control btn" type="submit">Login</button>
                     </form>
+                </div>
+                <div class="modal-footer py-0">
+                    <div class="text-danger" id="error-login-message">
+                    </div>
                 </div>
             </div>
         </div>
@@ -154,7 +162,6 @@
             let button = event.relatedTarget;
             // Extract info from data-bs-* attributes
             let recipient = button.getAttribute('data-bs-whatever');
-
             // Use above variables to manipulate the DOM
         });
     </script>
@@ -235,6 +242,7 @@
         loadData('visions', 'our-vision-template', 'our-vision');
         loadData('team', 'our-team-template', 'our-team-hb');
         loadData('testimonials', 'testimonials-template', 'testimonials-hb');
+        checkLogin();
     </script>
 </body>
 
