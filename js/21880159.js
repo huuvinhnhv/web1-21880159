@@ -62,7 +62,6 @@ function displayControls(isLogin = true) {
     displayLogin = 'block';
     displayLogout = 'none';
   }
-  console.log(isLogin)
   for (let i = 0; i < 2; i++) {
     linkLogins[i].style.display = displayLogin;
     linkLogouts[i].style.display = displayLogout;

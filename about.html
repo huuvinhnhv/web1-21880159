@@ -72,7 +72,8 @@
         </nav>
     </header>
     <section id="banner-small"></section>
-    <div id="content">
+    <div id="content"></div>
+    <div id="main">
         <section class="container py-5">
             <div class="row">
                 <div class="col-md-8 col-sm-12" id="about-us">
@@ -190,7 +191,7 @@
         <div>
             <img src="{{thumbpath}}" alt="{{name}}" class="float-start rounded-4 me-3">
             <p class="text-black-50">{{{summary}}}</p>
-            <a href="#" class="btn btn-link" onclick="loadData('aboutus/{{id}}', 'details-template','content')">Read more</a>
+            <a href="#aboutus/{{id}}" class="btn btn-link" onclick="loadDetails('aboutus/{{id}}', 'details-template','content')">Read more</a>
         </div>
         {{/each}}
     </script>
@@ -198,11 +199,13 @@
         <h1 class="py-3">Our Vision</h1>
         {{#each data}}
         <div class="clearfix py-2">
-            <img src="{{thumbpath}}" alt="{{name}}" class="rounded-4 float-start me-3">
-            <h3>{{name}}</h3>
-            <p class="text-black-50">
-                {{{summary}}}
-            </p>
+            <a class="text-decoration-none" href="#/visions/{{id}}" onclick="loadDetails('visions/{{id}}', 'details-template','content')">
+                <img src="{{thumbpath}}" alt="{{name}}" class="rounded-4 float-start me-3">
+                <h3 class="text-black">{{name}}</h3>
+                <p class="text-black-50">
+                    {{{summary}}}
+                </p>
+            </a>
         </div>
         {{/each}}
     </script>
@@ -218,9 +221,9 @@
     <script id="our-team-template" type="text/x-handlebars-template">
         {{#each data}}
         <div class="col">
-            <a href="#">
+            <a href="#team/{{id}}">
                 <img src="{{thumbpath}}" alt="{{name}}" class="rounded-4 mb-3 img-fluid"
-            onclick="loadData('team/{{id}}','details-template','content')">
+            onclick="loadDetails('team/{{id}}','details-template','content')">
             </a>
             
             <h4>{{name}}</h4>
@@ -240,11 +243,38 @@
         {{/each}}
     </script>
     <script>
-        loadData('aboutus', 'about-us-template', 'about-us');
-        loadData('visions', 'our-vision-template', 'our-vision');
-        loadData('team', 'our-team-template', 'our-team-hb');
-        loadData('testimonials', 'testimonials-template', 'testimonials-hb');
         checkLogin();
+        if (location.hash == '' || location.hash == "#") {
+            loadPage();
+        } else {
+            loadDetails(location.hash.substr(1), 'details-template', 'content');
+        }
+
+        function loadPage() {
+            document.getElementById('main').style.display = 'block';
+            document.getElementById('content').style.display = 'none';
+            loadData('aboutus', 'about-us-template', 'about-us');
+            loadData('visions', 'our-vision-template', 'our-vision');
+            loadData('team', 'our-team-template', 'our-team-hb');
+            loadData('testimonials', 'testimonials-template', 'testimonials-hb');
+            history.replaceState({ loadPage: 1 }, null, location.href);
+        }
+
+        async function loadDetails(request, templateId, viewId) {
+            document.getElementById('main').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+            await loadData(request, templateId, viewId);
+            history.replaceState({ request, templateId, viewId }, null, location.href);
+        }
+        window.onpopstate = (event) => {
+            let state = event.state;
+            if (state && state.loadPage) {
+                loadPage();
+
+            } else if (state && state.request) {
+                loadDetails(state.request, state.templateId, state.viewId);
+            }
+        }
     </script>
 </body>
 
