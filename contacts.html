@@ -46,10 +46,10 @@
                             <a class="nav-link" href="gallery.html">Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="blogs.html">Blogs</a>
+                            <a class="nav-link " href="blogs.html">Blogs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contacts.html">Contacts</a>
+                            <a class="nav-link active" href="contacts.html">Contacts</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link link-login" href="#" data-bs-toggle="modal"
@@ -58,8 +58,10 @@
                                 style="display:none;">Logout</a>
                         </li>
                     </ul>
-                    <form class="d-flex my-2 my-lg-0 border rounded-pill" id="form-search">
-                        <input class="form-control ms-2 border-0" type="text" placeholder="Search" />
+                    <form class="d-flex my-2 my-lg-0 border rounded-pill" id="form-search" method="GET"
+                        action="search.html">
+                        <input class="form-control ms-2 border-0" type="text" placeholder="Search" name="keyword"
+                            id="keyword" required>
                         <button class="btn my-2 my-sm-0 border-0" type="submit">
                             <i class="fa-solid fa-magnifying-glass"> </i>
                         </button>
@@ -163,10 +165,10 @@
                 <a class="nav-link" href="gallery.html">Gallery</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="blogs.html">Blogs</a>
+                <a class="nav-link " href="blogs.html">Blogs</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="contacts.html">Contacts</a>
+                <a class="nav-link active" href="contacts.html">Contacts</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link link-login" href="#" data-bs-toggle="modal" data-bs-target="#modalId">Login</a>
